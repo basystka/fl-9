@@ -1,0 +1,117 @@
+@media print {
+	body {
+		background: white;
+	}
+	.tm-sidebar {
+		display: none;
+	}
+	.tm-main-content {
+		margin: 0 auto;
+	}
+	.tm-banner{
+		height: 250px;
+	}
+	.tm-content-box {
+		flex-direction: column;
+	}
+	.pad {
+		max-width: 85%;
+		padding: 0;
+		margin: 0;
+	}
+	h2.tm-section-title {
+		margin-top: -30px;
+		color: blue;
+	}
+	#about, #ideas, .blocks, .heading, section.tm-content-box:last-of-type {
+		display: none;
+	}
+}
+@media screen {
+	.gallery-container a img {
+		border-radius: 50%;
+	}
+	.box-bg:hover {
+		background: #76cdd7;
+	}
+	.box-bg h2:hover {
+		color: white;
+		font-weight: 600;
+	}
+	p:first-letter{
+		color: #76cdd7;
+		font-size: 30px;
+	}
+	.tm-sidebar, .tm-content-box, .blocks {
+		box-shadow: 0 0 15px rgba(0,0,0,.6);
+	}
+	#home::before, section::before {
+		content: '';
+		border-top: 20px solid #59cfdc;
+		border-right: 100px solid transparent;
+	}
+	#home::before {
+		position: absolute;
+	}
+	#tmCarousel h2 {
+		color: gainsboro;
+		letter-spacing: 5px;
+	}
+	h2+p{
+		font-style: italic;
+	}
+	section:nth-of-type(1) p {
+		text-indent: 2em;
+		line-height: 30px;
+	}
+	.tm-banner-text:first-letter {
+		color: inherit;
+	}
+	.heading h2 {
+		color: #59cfdc;
+		text-align: center!important;
+	}
+	.heading a {
+		color: #000;
+		text-decoration: none;
+	}
+	.heading a:visited {
+		color: silver; 
+	}
+	.heading a:hover {
+		color: #59cfdc;
+		text-decoration: underline;
+		text-decoration-style:double; 
+	}
+	.text:after {
+		content: ' New';
+		color: red;
+		position: relative;
+		bottom: 5px;
+		font-size: 10px;
+	}
+	div.tm-content-box:nth-child(3) li:nth-child(odd) {
+        background-color: #f2f2f2;
+    }
+    div.tm-content-box:nth-child(3) p:first-letter {
+        color: black;
+    }
+    li.tm-nav-item {
+        border-bottom: 1px dotted silver;
+    }
+    li.tm-nav-item:last-child {
+        border: none;
+    }
+    input[type="text"], button[type="submit"] {
+        color: red;
+    }
+    button[type="submit"]:hover{
+    	background: #59cfdc;
+    	border-color: transparent;
+    	color: #fff;
+    }
+    .mandatory-field::after{
+    	content: '*';
+    	color: red;
+    }
+}
