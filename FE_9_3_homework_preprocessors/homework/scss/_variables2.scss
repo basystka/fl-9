@@ -1,0 +1,16 @@
+$bodyFont: 'Vollkorn', serif;
+$mainColor: #fc5830;
+$borderColor: #cfd8dc;
+$bodyBackground: lighten($borderColor, 10%);
+$articleBackground: #fff;
+$post-descriptionColor: #cfd0d8;
+$article_h3_Color: #617d8a;
+$hoverBackground: lighten($borderColor, 5%);
+$hoverColor: darken($mainColor, 20%);
+$articlsBorderTop: $post-descriptionColor;
+$textColor: #757575;
+$inputTextColor: #757575;
+$buttonColor: #fff;
+$buttonHoverColor: darken($mainColor, 20%);
+$buttonHoverBackground: darken($borderColor, 15%);
+$visited_link_color: #90b2b7;
