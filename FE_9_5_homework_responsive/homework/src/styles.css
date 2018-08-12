@@ -1,0 +1,211 @@
+/*
+ * Feel free to change name of colors if you need it
+ * Feel free to add new colors if you need it
+ */
+/*:root {
+  --bg-color--dark: #0a1223;
+  --bg-color--light: #fff;
+  --link: #5d5d5d;
+  --link--active: #54597d;
+  --link--hover: #54597d;
+  --article-title: #ddd;
+  --article-title--dark: #000;
+  --thumbnail--description: #5d5d5d;*/
+
+  /* These styles are needed only for media query max-width: 575px */
+
+  /* The 'Up' button (circle button at right bottom corner) */
+/*  --btn-color: #fff;
+  --btn-bg-color: #5ebcff;
+
+  --navigation-border-bottom: #ddd;
+  --thumbnail-title: #484747;
+}*/
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+ul {
+  list-style: none; 
+}
+a {
+  text-decoration: none;
+}
+a:hover, 
+a:active{
+  color: #54597d;
+}
+body, header, main, article{ 
+  width: 100%;
+  display: flex;  
+  flex-direction: column;
+}
+main{
+  padding-bottom: 150px;
+}
+body{
+  background: #0a1223;
+}
+nav ul{
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+nav li{
+  padding: 30px;
+}
+nav a{
+  color: #5d5d5d;
+  font-size: 1.3em;   
+}
+article h1{
+  width: 98%;
+  margin: 150px auto 150px;
+  text-align:center;
+  font-size: 4em;
+  color: #ddd;
+  font-weight: 600;
+  line-height: 1.2;
+}
+section{
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+section div{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+section h2{ 
+  font-size: 2em;
+  line-height: 1.2;
+  color: #ddd;
+  margin: 20px 0;
+  padding: 10px 0;
+  background: linear-gradient(to right, #ddd, #3f3f3f);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+}
+section p{
+  color: #5d5d5d;
+  font-weight: 500;
+  text-align: justify;
+  align-self: flex-start; 
+}
+section p:first-letter{
+  margin-left: 20px;
+}
+img{
+  width: 50%;
+  height:50%;
+  align-self: flex-end;
+  background-size: cover;
+  margin: 25px 0;
+}
+section:nth-child(odd) img{
+  order:-1;
+}
+.button{
+  display: none;
+}
+@media only screen and (max-width: 991px){
+  nav ul{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+  article h1{
+    width: 90%;
+  }
+  section div{
+    width: 100%;
+  }
+  section{
+    width: 60%;
+    justify-content: center;
+  }
+  section h2{
+    width: 100%;
+  }
+  section p{
+    width: 100%;
+    color: #5d5d5d;
+    font-weight: 500;
+    text-align: justify;  
+    margin-top: 0;
+  }
+  section p:first-letter{
+    margin-left: 20px;
+  }
+  img{
+    width: 100%;
+    background-size: cover;
+    margin: 25px 0;
+  }
+  section:nth-child(odd) img{
+    order: 2;
+  }
+  .button{
+    display: none;
+  }
+}
+@media only screen and (max-width: 575px){
+  body{
+    background: #fff;
+  }
+  nav ul{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  nav li{
+    padding: 15px 0;
+    border-bottom: 2px solid #ddd; 
+  }
+  nav a{
+    margin-left: 20px;
+    color: #5d5d5d;
+    font-size: 1.3em;   
+  }
+  nav a:hover{
+    font-weight: 600;
+  }
+  article h1{
+    font-size: 3.2em;
+    color: #000;
+  }
+  section{
+    width: 90%;
+  }
+  section h2{
+    color: #484747;
+    background: #484747;
+   -webkit-background-clip: text;
+  }
+  .button{
+    display: flex;
+    align-self: flex-end;
+    padding: 25px;
+    margin: 350px -10px 0;
+    font-size: 1.5em;
+    background: #5ebcff;
+    border-radius: 50%;
+    color: #fff;
+    box-shadow: 10px 15px 20px #ddd;
+    position: fixed;
+  }
+  .button:hover{
+    color: #fff;
+    background: #66b4ec;
+  }
+  .button:visited {
+    color: #fff;
+  }
+}
