@@ -18,21 +18,23 @@ let map = (arr, el) => {
 
 let filter = (arr, el) => {
 	let newArr = [];
-	forEach(arr, elm => {
+	let filtered = (elm) => {
 		if (el(elm)){
 			newArr.push(elm);
 		}
-	});
+	}
+	forEach(arr, filtered);
 	return newArr;
 };
 
 let getAdultAppleLovers = (data) => {
-	let newArr = [];
-	for(let i = 0; i < data.length; i++){
-		if (data[i].age > 18 && data[i].favoriteFruit === 'apple'){
-			newArr.push(data[i].name);
+	let newArr = [];	
+	let filter = (el) => {
+		if (el.age > 18 && el.favoriteFruit === 'apple'){
+			newArr.push(el.name);
 		}
-	}	
+	}
+	map(data, filter);
 	return newArr;
 };
 
