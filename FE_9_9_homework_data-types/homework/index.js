@@ -10,19 +10,19 @@ let forEach = (arr, el) => {
 
 let map = (arr, el) => {
 	let newArr = [];
-	for(let i = 0; i < arr.length; i++) {
-		newArr.push(el(arr[i]));
-	}
+	forEach(arr, elm => {
+		newArr.push(el(elm));
+	});
 	return newArr;
 };
 
 let filter = (arr, el) => {
 	let newArr = [];
-	for(let i = 0; i < arr.length; i++) {
-		if (el(arr[i])){
-			newArr.push(arr[i]);
+	forEach(arr, elm => {
+		if (el(elm)){
+			newArr.push(elm);
 		}
-	}
+	});
 	return newArr;
 };
 
@@ -32,7 +32,7 @@ let getAdultAppleLovers = (data) => {
 		if (data[i].age > 18 && data[i].favoriteFruit === 'apple'){
 			newArr.push(data[i].name);
 		}
-	}
+	}	
 	return newArr;
 };
 
