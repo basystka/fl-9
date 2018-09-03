@@ -1,0 +1,68 @@
+body{
+    font-family: Arial, sans-serif;
+}
+ul, li{
+    list-style: none;
+}
+#root{
+	width: 600px;
+	height: 575px;
+	margin: 0 auto;
+	border: 1px solid #000;
+	margin-top: 30px;
+    background: url('./img/cat.png') 50% 98% no-repeat;
+    background-size: 65px;
+}
+h1{
+	text-align: center;
+}
+p{
+	display: none;
+	text-align: center;
+    margin:15px;
+}
+input{
+	width: 80%;
+	margin-left: 30px ;
+	padding: 5px;
+	color: #666;
+	border: 1px solid #000;
+    font-size: 1em;
+}
+::placeholder {
+    color: #d4d3d3;
+}
+.adding{	
+	width: 5%;
+	margin-left: 15px;
+	vertical-align: middle;
+}
+.adding i{
+    font-size: 1.2em;
+}
+button{
+    display: flex;
+    align-items: center;
+	background: none;
+	border: none;
+	outline: none;
+	cursor: pointer;
+    padding: 0;
+}
+ul.list{
+	border-top:2px solid #000; 
+	margin: 20px 30px 20px 20px;
+	padding: 10px 0;
+}
+li.list_item{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -5px 0 10px;
+}
+.list_item>button>i{
+    font-size: 2.2em;
+}
+button>span{
+    margin-left: 10px;
+    font-size: 1.2em;
+}
