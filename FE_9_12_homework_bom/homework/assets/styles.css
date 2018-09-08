@@ -1,0 +1,85 @@
+* {
+	font-family: 'Arial', sans-serif;
+	font-size: 18px;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+}
+h1 {
+	padding: 30px;
+	text-align: center;
+	font-size: 35px;
+}
+ul {
+	width: 80%;
+	margin: 10px 0;
+	list-style-type: none;
+	padding: 0;
+}
+li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 10px 0;
+}
+input {
+	width: 100%;
+	padding: 10px;
+}
+
+button {
+	padding: 10px;
+	cursor: pointer;
+}
+#adding, #add_task, #change_text{
+	width: 80%;
+}
+.btns {
+	padding: 10px 0;
+	display: flex;
+	justify-content: space-between;
+}
+.btns button{
+	width: 45%;
+}
+#root {
+	width: 500px;
+	min-height: 350px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.check_done,
+.check_not_done,
+.input_text,
+.delete_item {
+	width: 36px;
+	height: 36px;
+	border: 0;
+	background: none;
+}
+.input_text:hover{
+	background: #f9f9f9;
+}
+.check_not_done {
+	background: url("./img/todo-s.png") no-repeat;
+}
+.check_done {
+	background: url("./img/done-s.png") no-repeat;
+}
+.input_text {
+	width: 80%;
+}
+.delete_item {
+	background: url("./img/remove-s.jpg") no-repeat;
+}
+.info {
+	text-align: center;
+	display: none;
+}
+#list:empty + .info {
+	display: block;
+}
