@@ -1,0 +1,71 @@
+@import "variables";
+
+body{
+	font-family: 'Roboto', serif;
+}
+a{
+	text-decoration: none!important;
+}
+header{
+	border-bottom: 1px solid lightgrey;
+}
+.navbar{
+	padding:0;
+}
+.navbar{
+	.nav-item{
+		.nav-link{
+			color: @nav_text-footer_color;
+			&:hover{
+				color: @white;
+				background: lighten(@h_color, 30%);
+			} 
+			&:focus{
+				color: @white;
+				background: @h_color;
+			}
+		}
+	}
+	.active{
+		.nav-link{
+			color: #fff!important;	
+			background: @h_color;
+		}
+	}
+}
+h1, .h-rel-class{
+	padding: 10px 0;
+	border-bottom: 2px solid lighten(@h_color, 30%);
+}
+.h-rel-class{
+	border-bottom: 1px solid lighten(@h_color, 30%);
+}
+.heading{
+	color: @h_color;
+}
+.title-rel-class{
+	color: @white;
+}
+.card-rel-class1{
+	background: @classes_color_1;
+}
+.card-rel-class2{
+	background: @h_color;
+}
+.card-rel-class3{
+	background: @classes_color_3;
+}
+.card-rel-class4{
+	background: @classes_color_4;
+}
+.is-hover{
+	display: block;	
+	transition: .5s linear;
+	&:hover{	
+		opacity: .7;
+		transform: scale(1.1);		
+	}
+}
+.footer{
+	background: @nav_text-footer_color;
+}
