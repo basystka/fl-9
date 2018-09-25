@@ -3,23 +3,30 @@
 body{
 	font-family: 'Roboto', serif;
 }
-a{
-	text-decoration: none!important;
+a:link,
+a:visited,
+a:hover,
+a:focus,
+a:active{
+	text-decoration: none;
 }
 header{
 	border-bottom: 1px solid lightgrey;
 }
-.navbar{
+.navbar.navbar-light{
 	padding:0;
 	.nav-item{
 		.nav-link{
 			color: @nav_text-footer_color;
-			&:hover{
+			transition: all .15s ease-out 0s;
+			&:hover,
+			&:focus{
 				color: @white;
+			}
+			&:hover{
 				background: lighten(@h_color, 30%);
 			} 
 			&:focus{
-				color: @white;
 				background: @h_color;
 			}	
 		}
@@ -29,7 +36,7 @@ header{
 		> .nav-link:hover,
 		> .nav-link:focus,
 		> .nav-link:active{
-			color: @white!important;
+			color: @white;
 			background: @h_color;
 			cursor: default;
 		}
@@ -40,7 +47,7 @@ h1, .h-rel-class{
 	border-bottom: 2px solid lighten(@h_color, 30%);
 }
 .h-rel-class{
-	border-bottom: 1px solid lighten(@h_color, 30%);
+	border-bottom-width: 1px;
 }
 .heading{
 	color: @h_color;
