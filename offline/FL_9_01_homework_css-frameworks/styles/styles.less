@@ -11,8 +11,6 @@ header{
 }
 .navbar{
 	padding:0;
-}
-.navbar{
 	.nav-item{
 		.nav-link{
 			color: @nav_text-footer_color;
@@ -23,13 +21,17 @@ header{
 			&:focus{
 				color: @white;
 				background: @h_color;
-			}
+			}	
 		}
 	}
 	.active{
-		.nav-link{
-			color: @white!important;	
+		> .nav-link,
+		> .nav-link:hover,
+		> .nav-link:focus,
+		> .nav-link:active{
+			color: @white!important;
 			background: @h_color;
+			cursor: default;
 		}
 	}
 }
