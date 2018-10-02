@@ -39,7 +39,8 @@ function ShoppingCart (obj) {
 	}
 
 	this.getAvaragePrice = function(){
-		return +(this.getTotalPrice() / products.length);
+		let avaragePr = this.getTotalPrice() / products.length;
+		return avaragePr;
 	};
 
 	this.getProducts = function(){
