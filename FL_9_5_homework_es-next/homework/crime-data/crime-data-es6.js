@@ -51,15 +51,15 @@ const crimeDataSource = surname => {
 const loadVictimData = name => {
 	return new Promise(resolve => {
 		victimDataSource(name)
-			.then(victim => {
-				return crimeDataSource(victim.surname)
+		.then(victim => {
+			const {name, surname, jobTitle, age} = victim;
+			return crimeDataSource(victim.surname)
 			.then(crime => {
-				const {name, surname, jobTitle, age} = victim;
 				const {title, place} = crime;
 				resolve(`${name} ${surname}(${jobTitle}, ${age}) suffered from ${title} in ${place}.`);
 			})
 		})
-	.catch(msg => console.log(`Error: ${msg}`));
+		.catch(msg => console.log(`Error: ${msg}`));
 	});
 }
 
