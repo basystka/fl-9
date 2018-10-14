@@ -54,15 +54,16 @@ function checkEarth(respon) {
 	validateData(JSON.parse(respon));
 	hideLoader();
 	res.innerHTML = `<ul>
-	<li>Lat: ${JSON.parse(respon).lat.toFixed(2)}</li>
-	<li>Lon: ${JSON.parse(respon).lon.toFixed(2)}</li>
-	<li>Water: ${JSON.parse(respon).water}</li>
+		<li>Lat: ${JSON.parse(respon).lat.toFixed(2)}</li>
+		<li>Lon: ${JSON.parse(respon).lon.toFixed(2)}</li>	
 	</ul>`;
 	let water = JSON.parse(respon).water;
 	if (water !== false){
-		result.innerHTML = `<img class="water"></img>`;
+		result.innerHTML = `<img class="water">
+			<p class="img-title">Yep, it's water there</p>`;
 	} else {
-		result.innerHTML = `<img class="land"></img>`;
+		result.innerHTML = `<img class="land">
+			<p class="img-title">Oops, it's just land</p>`;
 	}
 }
 
