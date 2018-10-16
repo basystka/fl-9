@@ -10,7 +10,6 @@ $(function(){
 	$(document).on('click', 'button#load-img', function () {
 		$('#imagelightbox').remove();
 		loadContent();
-		StartImageLightBox().destroy();
 		StartImageLightBox();
 	});
 
