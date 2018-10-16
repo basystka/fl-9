@@ -1,5 +1,6 @@
 $(function(){ 
 	ItemsQty = 0;
+
 	$(function(){
 		NextStartsFrom = 0;
 		ItemsQty = 12;
@@ -15,47 +16,43 @@ $(function(){
 
 	function loadContent() {
 		$.getJSON('data/media.json', function(data) {
-		let dataLength = data.media.length;
-		for(let i = NextStartsFrom; i < NextStartsFrom + ItemsQty; i++) {
-			if (i >= dataLength) {
-				$("#load-img").after('<div id="load-img">This is the end, my only friend, the end</div>').remove();
+			let dataLength = data.media.length;
+			for(let i = NextStartsFrom; i < NextStartsFrom + ItemsQty; i++) {
+				if (i >= dataLength) {
+					$("#load-img").after('<div id="load-img">This is the end, my only friend, the end</div>').remove();
+				}
+				$('#container ul').append(`
+					<li class="img-list">
+						<a href="${data.media[i].display_url}"
+							data-likes-qty="${data.media[i].edge_liked_by.count}"
+							data-comments-qty="${data.media[i].edge_media_to_comment.count}"
+							data-description="${data.media[i].edge_media_to_caption}"
+							data-id="${data.media[i].id}"
+							data-location="${data.media[i].location}"
+							style="background-image: url(${data.media[i].display_url})"
+							class="LBE"
+							unprocessed="true">
+							<div class="stat">
+								<div class="stat-center">
+									<span class='likes-qty'>${data.media[i].edge_liked_by.count}</span>
+									<span class='comments-qty'>${data.media[i].edge_media_to_comment.count}</span>
+								</div>
+							</div>
+						</a>
+					</li>
+				`);
 			}
-		$('#container ul').append(`
-			<li class="img-list">
-				<a href="${data.media[i].display_url}"
-					data-likes-qty="${data.media[i].edge_liked_by.count}"
-					data-comments-qty="${data.media[i].edge_media_to_comment.count}"
-					data-description="${data.media[i].edge_media_to_caption}"
-					data-id="${data.media[i].id}"
-					data-location="${data.media[i].location}"
-					style="background-image: url(${data.media[i].display_url})"
-					class="LBE"
-				>
-					<div class="stat">
-						<div class="stat-center">
-							<span class='likes-qty'>${data.media[i].edge_liked_by.count}</span>
-							<span class='comments-qty'>${data.media[i].edge_media_to_comment.count}</span>
-						</div>
-					</div>
-				</a>
-			</li>`);
-		}
-		NextStartsFrom += ItemsQty;
-		ItemsQty = 6;
-	});
-};
+			NextStartsFrom = NextStartsFrom + ItemsQty;
+			ItemsQty = 6;
+		});
+	};
 	StartImageLightBox();
 	function StartImageLightBox() {
 		$.when($.ready).then(function() {
-			$('a.LBE').imageLightbox();
-				$(document).on('click', 'a.LBE', function () {
-				$('#imagelightbox').remove();
-			});
+			$('a.LBE[unprocessed]').imageLightbox().removeAttr('unprocessed');
 		});
 	};
 });
-
-
 ( function( $, window, document, undefined ) {
 	'use strict';
 
@@ -105,17 +102,17 @@ $(function(){
 	{
 		var options	   = $.extend(
 						 {
-						 	selector:		'id="imagelightbox"',
-						 	animationSpeed:	250,
-						 	preloadNext:	true,
-						 	enableKeyboard:	true,
-						 	quitOnEnd:		false,
-						 	quitOnImgClick: false,
-						 	quitOnDocClick: true,
-						 	onStart:		false,
-						 	onEnd:			false,
-						 	onLoadStart:	false,
-						 	onLoadEnd:		false
+							selector:		'id="imagelightbox"',
+							animationSpeed:	250,
+							preloadNext:	true,
+							enableKeyboard:	true,
+							quitOnEnd:		false,
+							quitOnImgClick: false,
+							quitOnDocClick: true,
+							onStart:		false,
+							onEnd:			false,
+							onLoadStart:	false,
+							onLoadEnd:		false
 						 },
 						 options ),
 
@@ -235,7 +232,7 @@ $(function(){
 							return false;
 						}
 						if( wasTouched( e.originalEvent ) ) return true;
-					    var posX = ( e.pageX || e.originalEvent.pageX ) - e.target.offsetLeft;
+						var posX = ( e.pageX || e.originalEvent.pageX ) - e.target.offsetLeft;
 						target = targets.eq( targets.index( target ) - ( imageWidth / 2 > posX ? 1 : -1 ) );
 						if( !target.length ) target = targets.eq( imageWidth / 2 > posX ? targets.length : 0 );
 						loadImage( imageWidth / 2 > posX ? 'left' : 'right' );
@@ -364,3 +361,4 @@ $(function(){
 		return this;
 	};
 })( jQuery, window, document );
+

@@ -106,6 +106,3 @@ div#load-img {
 	position: fixed;
 	box-shadow: 0 0 0 300vw rgba(0,0,0,.9);
 }
-#imagelightbox + #imagelightbox {
-	display: none;
-}
