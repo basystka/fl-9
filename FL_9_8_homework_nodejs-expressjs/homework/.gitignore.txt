@@ -1,2 +1,0 @@
-# folder ignore
-/node_modules
