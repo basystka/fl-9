@@ -1,0 +1,4 @@
+# folder ignore
+node_modules/
+dist/
+bin/
