@@ -16,7 +16,7 @@ const	gulp		= require('gulp'),
 let cssmap	= gulp.src('./src/sass/*.scss');
 let jsmap	= gulp.src(['./node_modules/moment/moment.js', './src/js/canvasState.js', './src/js/clock.js', './src/js/app.js']);
 
-gulp.task('make-css', function(){
+gulp.task('make-css', function() {
 	return cssmap
 		.pipe(scss())
 		.pipe(cssnano())
@@ -27,7 +27,7 @@ gulp.task('make-css', function(){
 		.pipe(connect.reload());
 });
 
-gulp.task('make-js', function(){
+gulp.task('make-js', function() {
 	return jsmap
 		.pipe(concat('app.min.js'))
 		.pipe(uglify())
@@ -36,18 +36,18 @@ gulp.task('make-js', function(){
 		.pipe(gulp.dest('./bin/js'))
 		.pipe(connect.reload());
 });
-gulp.task('make-bin', function(){
+gulp.task('make-bin', function() {
 	runSequence('make-css', 'make-js');
 });
 
-gulp.task('put-html', function(){
+gulp.task('put-html', function() {
 	return gulp.src('./src/app.html')
 		.pipe(rename('index.html'))
 		.pipe(gulp.dest('./bin'))
 		.pipe(connect.reload());
 });
 
-gulp.task('make-prod', function(){
+gulp.task('make-prod', function() {
 	return (
 	[gulp.src('./bin/*.html')
 		.pipe(gulp.dest('./dist'))],
@@ -57,24 +57,24 @@ gulp.task('make-prod', function(){
 		.pipe(gulp.dest('./dist/css'))]
 )});
 
-gulp.task('clear-bin', function(){
+gulp.task('clear-bin', function() {
 	return del.sync('./bin/**/*.min.*')
 });
 
-gulp.task('clear-prod', function(){
+gulp.task('clear-prod', function() {
 	return del.sync('./dist/**/*.min.*')
 });
 
-gulp.task('clear-all', function(){
+gulp.task('clear-all', function() {
 	del.sync('./bin/**')
 	del.sync('./dist/**')
 });
 
-gulp.task('build', function(){
+gulp.task('build', function() {
 	runSequence(['clear-bin'], ['make-bin'], 'put-html');
 });
 
-gulp.task('build-prod', function(){
+gulp.task('build-prod', function() {
 	runSequence(['clear-prod'], ['make-prod']);
 });
 
