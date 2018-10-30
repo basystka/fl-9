@@ -1,0 +1,53 @@
+body {
+	font-family: "Monserat", Arial, sans-serif;
+	color: #55a593;
+	background: #e2dab4;
+	font-size: 18px;
+}
+h1 {
+	font-size: 32px;
+	text-align: center;
+}
+input {
+	border: none;
+	border-radius: 6px;
+	margin: 5px;
+	font-size: 18px;
+	outline: none;
+}
+input[type=button] {
+	width: 43px;
+	height: 43px;
+	font-size: 26px;
+	color: #e2dab4;
+	margin: 20px 5px;
+	background: #009688;
+	outline: none;
+	cursor: pointer;
+}
+input[type=button]:hover,
+input[type=button]:focus {
+	background: #057b70;
+}
+input[type=number]{
+	width: 245px;
+	color: #848884;
+	padding: 5px 5px 5px 15px;
+	background: #f3f0df;
+}
+label{
+	margin: 10px;
+}
+#root {
+	width: 275px;
+	margin: 50px auto;
+}
+#result, span {
+	margin-top: 10px;
+	font-size: 24px;
+	color: #848884;
+	text-align: center;
+}
+#reset {
+	width: 50px;
+}
