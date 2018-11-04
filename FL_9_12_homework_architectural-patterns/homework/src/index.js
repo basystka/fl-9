@@ -41,7 +41,7 @@ function usersStore(defaultUsers) {
     };
 }
 
-const rednderUsers = (users) => {
+const renderUsers = (users) => {
     const pattern = users.map((user) => {
         return `
     <tr id=${ user.id }>
@@ -102,10 +102,10 @@ const displayExtracted = () => {
 };
 
 displayExtracted();
-rednderUsers(store.getState());
+renderUsers(store.getState());
 store.subscribe(displayExtracted);
 store.subscribe(() => {
-    rednderUsers(store.getState());
+    renderUsers(store.getState());
 });
 
 HTML_DOM.loadMore.addEventListener('click', () => {
