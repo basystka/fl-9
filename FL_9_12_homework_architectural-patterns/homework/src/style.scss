@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$turqoise:  #26a69a;
+$red:       #E57373;
+$palered:   #d77976;
+$gray:      #f8f8f8;
+$white:     #fff;
+$shadow:    0 2px 2px 0 rgba(0, 0, 0, 0.14),
+            0 3px 1px -2px rgba(0, 0, 0, 0.12),
+            0 1px 5px 0 rgba(0, 0, 0, 0.2);
+.root {
+    font-family: 'Open Sans', sans-serif;
+}
+
+$hover:     rgba(lighten($turqoise,30%),.3);
+$shadow-active: 0 1px 4px 0 rgba(0, 0, 0, 0.28),
+                0 2px 2px -2px rgba(0, 0, 0, 0.24),
+                0 0 10px 0 rgba(0, 0, 0, 0.4);
+html, body {
+    width: 100%;
+    height: 100%;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, main, menu, nav, output, ruby, section, summary, time, mark, audio, video, :before, :after, button, input, textarea, hr, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: 400;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    background: 0;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    font-kerning: normal;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+* {
+    outline: none;
+}
+a:link,
+a:visited {
+    color: $turqoise;
+}
+img {
+    display: block;
+    width: 65px;
+    height: auto;
+}
+body {
+    font-family: sans-serif;
+}
+button {
+    cursor: pointer;
+    transition: all .3s;
+    &.delete {
+        padding: 5px 10px;
+        color:  $white;
+        background: $palered;
+        box-shadow: $shadow;
+        &:active {
+            box-shadow: $shadow-active;
+            background: darken($palered,10%);
+        }
+    }
+}
+.invisible {
+    display: none;
+}
+.wrapper {
+    padding: 80px 0;
+}
+.input-search {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: $white;
+}
+.form {
+    label {
+        font-weight: bold;
+    }
+    input {
+        border: none;
+        padding: 5px;
+        border-bottom: 2px solid $gray;
+    }
+}
+.table {
+    padding: 20px 40px 0 20px;
+}
+.users-info{
+    width: 100%;
+    border-spacing: 0;
+    thead {
+        background: $turqoise;
+        color: $white;
+        text-align: left;
+    }
+    tbody tr {
+        transition: background .3s;
+        &:nth-child(odd) {
+            background: $gray;
+        }
+        &:hover {
+            background: $hover;
+        }
+    }
+    th {
+        padding: 15px 10px;
+        white-space: nowrap;
+    }
+    td {
+        vertical-align: middle;
+        padding: 10px;
+        &:nth-child(5),
+        &:nth-child(6) {
+            text-align: right;
+        }
+    }
+}
+.load-more {
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    background: $white;
+    bottom: 0;
+    left: 0;
+    p {
+        margin-bottom: 5px;
+    }
+    button {
+        padding: 10px 160px;
+        border-radius: 20px;
+        background: $gray;
+        font-size: 20px;
+        text-transform: uppercase;
+        box-shadow: $shadow;
+        &:hover {
+            box-shadow: $shadow-active;
+        }
+    }
+}
+@keyframes toBottom {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(1000px);
+    }
+}
+.addBottom {
+    animation: toBottom 2s .2s;
+}
